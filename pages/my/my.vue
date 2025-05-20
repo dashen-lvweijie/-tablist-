@@ -1,32 +1,76 @@
 <template>
 	<view>
-		<tab @btnOk="btnOk" :tabTitle="tabTitle" :leftList="leftList" :centerList="centerList" :rightList="rightList" :activeColor="activeColor"></tab>
+		<tablistVue @btnOk="btnOk" :tabData="combinedData" :activeColor="activeColor"></tablistVue>
 	</view>
 </template>
 
 <script>
-	import tab from 'components/tablist.vue'
+	import tablistVue from '../../components/tablist.vue';
 	export default {
-		components:{
-			tab
+		components: {
+			tablistVue
 		},
 		data() {
 			return {
-				tabTitle:[{name:'星级'},{name:'人气'},{name:'房型'},],//tab标题的数组
-				leftList:[{name:'二星'},{name:'三星'},{name:'四星'},{name:'五星'}],//左侧内容区域
-				centerList:[{name:'垃圾'},{name:'低级'},{name:'中级'},{name:'高级'}],//中间内容区域
-				rightList:[{name:'刘德华'},{name:'张学友'},{name:'郭富城'},{name:'黎明'}],//右侧内容区域
-				activeColor:['yellow','red'],//高亮颜色(前面是字体颜色后面是背景颜色)
+				combinedData: [{
+						title: '星级',
+						list: [{
+							name: '二星'
+						}, {
+							name: '三星'
+						}, {
+							name: '四星'
+						}, {
+							name: '五星'
+						}]
+					},
+					{
+						title: '人气',
+						list: [{
+							name: '垃圾'
+						}, {
+							name: '低级'
+						}, {
+							name: '中级'
+						}, {
+							name: '高级'
+						}]
+					},
+					{
+						title: '房型',
+						list: [{
+							name: '刘德华'
+						}, {
+							name: '张学友'
+						}, {
+							name: '郭富城'
+						}, {
+							name: '黎明'
+						},
+						{
+							name: '黎明'
+						}]
+					},
+					{
+						title: '房型1',
+						list: [{
+							name: '刘德华1'
+						}, {
+							name: '张学友1'
+						}, {
+							name: '郭富城1'
+						}, {
+							name: '黎明1'
+						}]
+					}
+				],
+				activeColor: ['yellow', 'red']
 			}
 		},
-		methods: {
-			btnOk(e){//弹框确认事件(第一个参数是索引，第二个参数是所在位置)
-				console.log(e,'00000000000000');
+		methods:{
+			btnOk(val){
+				console.log(val);
 			}
 		}
 	}
 </script>
-
-<style>
-
-</style>
