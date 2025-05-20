@@ -76,20 +76,18 @@
 			},
 
 			handleConfirm() {
-				// 过滤未选中的选项
 				const selectedData = this.tabData
 					.map((tab, tabIndex) => ({
 						tabIndex,
 						tabTitle: tab.title,
-						selectedValue: tab.list[this.selections[tabIndex]],
-						selectedIndex: this.selections[tabIndex]
+						selectedItem: tab.list[this.selections[tabIndex]] || null
 					}))
-					.filter(item => item.selectedIndex > -1) // 关键过滤条件
+					.filter(item => item.selectedItem !== null)
 
-				// 返回两种格式数据（按需选用）
+				// 返回两种格式数据
 				this.$emit('btnOk', {
-					simple: selectedData.map(d => d.selectedValue.name),
-					full: selectedData
+					values: selectedData.map(d => d.selectedItem.value), // 返回value数组
+					fullData: selectedData // 完整数据
 				})
 
 				this.activeTab = null

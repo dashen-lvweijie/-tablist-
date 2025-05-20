@@ -15,60 +15,54 @@
 				combinedData: [{
 						title: '星级',
 						list: [{
-							name: '二星'
-						}, {
-							name: '三星'
-						}, {
-							name: '四星'
-						}, {
-							name: '五星'
-						}]
+								name: '二星',
+								value: 2
+							}, // 新增value属性
+							{
+								name: '三星',
+								value: 3
+							},
+							{
+								name: '四星',
+								value: 4
+							},
+							{
+								name: '五星',
+								value: 5
+							}
+						]
 					},
 					{
 						title: '人气',
 						list: [{
-							name: '垃圾'
+							name: '垃圾',value: 1
 						}, {
-							name: '低级'
+							name: '低级',value: 2
 						}, {
-							name: '中级'
+							name: '中级',value: 3
 						}, {
-							name: '高级'
+							name: '高级',value: 4
 						}]
 					},
 					{
 						title: '房型',
 						list: [{
-							name: '刘德华'
-						}, {
-							name: '张学友'
-						}, {
-							name: '郭富城'
-						}, {
-							name: '黎明'
-						},
-						{
-							name: '黎明'
-						}]
+								name: '刘德华',value: 'liu'
+							}, {
+								name: '张学友',value: 'zhang'
+							}, {
+								name: '郭富城',value:'guo'
+							}, {
+								name: '黎明',value:'li'
+							},
+						]
 					},
-					{
-						title: '房型1',
-						list: [{
-							name: '刘德华1'
-						}, {
-							name: '张学友1'
-						}, {
-							name: '郭富城1'
-						}, {
-							name: '黎明1'
-						}]
-					}
 				],
 				activeColor: ['yellow', 'red']
 			}
 		},
-		methods:{
-			btnOk(val){
+		methods: {
+			btnOk(val) {
 				console.log(val);
 			}
 		}
